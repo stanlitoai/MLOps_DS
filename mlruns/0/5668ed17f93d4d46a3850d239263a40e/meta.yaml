@@ -1,0 +1,15 @@
+artifact_uri: file:///home/anonymous/PycharmProjects/MLOps_DS/mlruns/0/5668ed17f93d4d46a3850d239263a40e/artifacts
+end_time: 1694195441983
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 5668ed17f93d4d46a3850d239263a40e
+run_name: rebellious-newt-673
+run_uuid: 5668ed17f93d4d46a3850d239263a40e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1694195439541
+status: 3
+tags: []
+user_id: anonymous

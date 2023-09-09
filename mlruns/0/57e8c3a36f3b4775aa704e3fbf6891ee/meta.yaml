@@ -1,0 +1,15 @@
+artifact_uri: file:///home/anonymous/PycharmProjects/MLOps_DS/mlruns/0/57e8c3a36f3b4775aa704e3fbf6891ee/artifacts
+end_time: 1694195275796
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 57e8c3a36f3b4775aa704e3fbf6891ee
+run_name: grandiose-owl-33
+run_uuid: 57e8c3a36f3b4775aa704e3fbf6891ee
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1694195271794
+status: 3
+tags: []
+user_id: anonymous

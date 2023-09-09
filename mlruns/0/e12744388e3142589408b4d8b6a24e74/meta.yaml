@@ -1,0 +1,15 @@
+artifact_uri: file:///home/anonymous/PycharmProjects/MLOps_DS/mlruns/0/e12744388e3142589408b4d8b6a24e74/artifacts
+end_time: 1694209475222
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e12744388e3142589408b4d8b6a24e74
+run_name: whimsical-shrimp-176
+run_uuid: e12744388e3142589408b4d8b6a24e74
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1694209471451
+status: 3
+tags: []
+user_id: anonymous
