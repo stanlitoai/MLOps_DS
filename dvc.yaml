@@ -1,0 +1,51 @@
+stages:
+  data_ingestion:
+    cmd: python src/mlds/pipeline/stage_01_data_ingestion.py
+    deps:
+      - src/mlds/pipeline/stage_01_data_ingestion.py
+      - config/config.yaml
+    outs:
+      - artifacts/data_ingestion/winequality-red.csv
+
+
+  data_validation:
+    cmd: python src/mlds/pipeline/stage_02_data_validation.py
+    deps:
+      - src/mlds/pipeline/stage_02_data_validation.py
+      - config/config.yaml
+    outs:
+      - artifacts/data_validation
+
+
+  data_transformation:
+    cmd: python src/mlds/pipeline/stage_03_data_transformation.py
+    deps:
+      - src/mlds/pipeline/stage_03_data_transformation.py
+      - config/config.yaml
+    outs:
+      - artifacts/data_transformation
+
+
+
+  training:
+    cmd: python src/mlds/pipeline/stage_04_model_trainer.py
+    deps:
+      - src/mlds/pipeline/stage_04_model_trainer.py
+      - config/config.yaml
+      - artifacts/data_ingestion/winequality-red.csv
+    outs:
+      - artifacts/model_trainer/model.joblib
+
+
+  
+
+  evaluation:
+    cmd: python src/mlds/pipeline/stage_05_model_evaluation.py
+    deps:
+      - src/mlds/pipeline/stage_05_model_evaluation.py
+      - config/config.yaml
+      - artifacts/data_ingestion/winequality-red.csv
+      - artifacts/model_trainer/model.joblib
+   
+    metrics:
+    - artifacts/model_evaluation/metrics.json

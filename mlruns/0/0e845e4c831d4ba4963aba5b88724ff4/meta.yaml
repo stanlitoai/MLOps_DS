@@ -1,0 +1,15 @@
+artifact_uri: file:///home/anonymous/PycharmProjects/MLOps_DS/mlruns/0/0e845e4c831d4ba4963aba5b88724ff4/artifacts
+end_time: 1694250315313
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 0e845e4c831d4ba4963aba5b88724ff4
+run_name: debonair-loon-503
+run_uuid: 0e845e4c831d4ba4963aba5b88724ff4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1694250311440
+status: 3
+tags: []
+user_id: anonymous

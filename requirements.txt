@@ -11,5 +11,6 @@ ensure
 joblib
 types-PyYAML
 Flask
+dvc
 Flask-Cors
 -e .

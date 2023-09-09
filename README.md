@@ -80,6 +80,14 @@ export MLFLOW_TRACKING_PASSWORD=f616a6150e177ffd52787126e7241eeb312f247f
 
 ```
 
+# # Dockerfile
+# FROM python:3.8                        # Base image for our job
+# RUN pip install --upgrade pip && \
+#     pip install -U setuptools==49.6.0 # Upgrade pip and setuptools
+# RUN apt-get update && \
+#     apt-get install unzip groff -y    # Install few system dependencies
+# COPY requirements.txt ./              # Copy requirements.txt file into image
+# RUN pip install -r requirements.txt   # Installing project dependencies
 
 
 # AWS-CICD-Deployment-with-Github-Actions

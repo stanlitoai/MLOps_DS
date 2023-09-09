@@ -1,0 +1,96 @@
+schema: '2.0'
+stages:
+  data_ingestion:
+    cmd: python src/mlds/pipeline/stage_01_data_ingestion.py
+    deps:
+    - path: config/config.yaml
+      hash: md5
+      md5: 7e2ee0d94407519270125f9e84fd6df0
+      size: 981
+    - path: src/mlds/pipeline/stage_01_data_ingestion.py
+      hash: md5
+      md5: 571974d8290a569770c33d23aad7eb5c
+      size: 996
+    outs:
+    - path: artifacts/data_ingestion/winequality-red.csv
+      hash: md5
+      md5: 6a883fd98624e18c0b7ce251f4fab4fb
+      size: 100951
+  data_validation:
+    cmd: python src/mlds/pipeline/stage_02_data_validation.py
+    deps:
+    - path: config/config.yaml
+      hash: md5
+      md5: 7e2ee0d94407519270125f9e84fd6df0
+      size: 981
+    - path: src/mlds/pipeline/stage_02_data_validation.py
+      hash: md5
+      md5: 120e81543c0fdf9d19722aec04a6543d
+      size: 944
+    outs:
+    - path: artifacts/data_validation
+      hash: md5
+      md5: 0ccb3ea5849272ff03be5ab71786b9ff.dir
+      size: 23
+      nfiles: 1
+  data_transformation:
+    cmd: python src/mlds/pipeline/stage_03_data_transformation.py
+    deps:
+    - path: config/config.yaml
+      hash: md5
+      md5: 7e2ee0d94407519270125f9e84fd6df0
+      size: 981
+    - path: src/mlds/pipeline/stage_03_data_transformation.py
+      hash: md5
+      md5: f6a8e0bd83e3b1ded9fda2e1f493cc22
+      size: 1399
+    outs:
+    - path: artifacts/data_transformation
+      hash: md5
+      md5: 4c3502039c27e1efae6ff84dea0b6003.dir
+      size: 93631
+      nfiles: 2
+  training:
+    cmd: python src/mlds/pipeline/stage_04_model_trainer.py
+    deps:
+    - path: artifacts/data_ingestion/winequality-red.csv
+      hash: md5
+      md5: 6a883fd98624e18c0b7ce251f4fab4fb
+      size: 100951
+    - path: config/config.yaml
+      hash: md5
+      md5: 7e2ee0d94407519270125f9e84fd6df0
+      size: 981
+    - path: src/mlds/pipeline/stage_04_model_trainer.py
+      hash: md5
+      md5: 59c3cd3989b686991fe1dbbf2d607596
+      size: 898
+    outs:
+    - path: artifacts/model_trainer/model.joblib
+      hash: md5
+      md5: 0aa34f5b1e7369936b2f2c7b4aa1bb78
+      size: 1279
+  evaluation:
+    cmd: python src/mlds/pipeline/stage_05_model_evaluation.py
+    deps:
+    - path: artifacts/data_ingestion/winequality-red.csv
+      hash: md5
+      md5: 6a883fd98624e18c0b7ce251f4fab4fb
+      size: 100951
+    - path: artifacts/model_trainer/model.joblib
+      hash: md5
+      md5: 0aa34f5b1e7369936b2f2c7b4aa1bb78
+      size: 1279
+    - path: config/config.yaml
+      hash: md5
+      md5: 7e2ee0d94407519270125f9e84fd6df0
+      size: 981
+    - path: src/mlds/pipeline/stage_05_model_evaluation.py
+      hash: md5
+      md5: fe510314ee7cb42d55f21c8f5d737a60
+      size: 953
+    outs:
+    - path: artifacts/model_evaluation/metrics.json
+      hash: md5
+      md5: d6874f41e6ee7fee4aa40525a5845828
+      size: 95

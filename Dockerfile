@@ -1,8 +1,9 @@
-# Dockerfile
-FROM python:3.8                       # Base image for our job
-RUN pip install --upgrade pip && \
-    pip install -U setuptools==49.6.0 # Upgrade pip and setuptools
-RUN apt-get update && \
-    apt-get install unzip groff -y    # Install few system dependencies
-COPY requirements.txt ./              # Copy requirements.txt file into image
-RUN pip install -r requirements.txt   # Installing project dependencies
+FROM python:3.8-slim-buster
+
+RUN apt update -y && apt install awscli -y
+WORKDIR /app
+
+COPY . /app
+RUN pip install -r requirements.txt
+
+CMD ["python3", "app.py"]

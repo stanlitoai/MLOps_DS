@@ -1,0 +1,15 @@
+artifact_uri: file:///home/anonymous/PycharmProjects/MLOps_DS/mlruns/0/33b896b7d54c409cb5cae9998bb2faaa/artifacts
+end_time: 1694251475957
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 33b896b7d54c409cb5cae9998bb2faaa
+run_name: useful-fly-883
+run_uuid: 33b896b7d54c409cb5cae9998bb2faaa
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1694251470616
+status: 3
+tags: []
+user_id: anonymous
